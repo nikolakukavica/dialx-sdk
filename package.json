@@ -1,0 +1,59 @@
+{
+  "name": "@kuka/dialx-sdk",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup --tsconfig tsconfig.build.json",
+    "build:watch": "tsup --watch",
+    "type-check": "tsc --build"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "latest",
+    "@ai-sdk/provider": "latest",
+    "@ai-sdk/provider-utils": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.24",
+    "@vercel/style-guide": "^6.0.0",
+    "tsup": "^8",
+    "typescript": "5.8.3",
+    "zod": "3.25.76"
+  },
+  "peerDependencies": {
+    "zod": "^3.25.76 || ^4.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://ai-sdk.dev/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolakukavica/dialx-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikolakukavica/dialx-sdk/issues"
+  },
+  "keywords": [
+    "ai"
+  ]
+}
