@@ -25,7 +25,7 @@ import { dialxOpenaiTools } from './dialx-openai-tools';
 import { VERSION } from './version';
 
 export interface DialxOpenAIProvider extends ProviderV4 {
-  (deploymentId: string): LanguageModelV4 | EmbeddingModelV4 | ImageModelV4 | TranscriptionModelV4 | SpeechModelV4;
+  (deploymentId: string): LanguageModelV4;
 
   /**
    * Creates an Azure OpenAI responses API model for text generation.
@@ -246,16 +246,16 @@ export function createDialx(
     });
 
   const provider = function (deploymentId: string) {
-    if (new.target) {
-      throw new Error(
-        'The Azure OpenAI model function cannot be called with the new keyword.',
-      );
-    }
+    // if (new.target) {
+    //   throw new Error(
+    //     'The Azure OpenAI model function cannot be called with the new keyword.',
+    //   );
+    // }
 
     return options.useResponsesModel ? createResponsesModel(deploymentId) :  createChatModel(deploymentId);
   };
 
-  provider.specificationVersion = 'v3' as const;
+  provider.specificationVersion = 'v4' as const;
   provider.languageModel = options.useResponsesModel ? createResponsesModel : createChatModel;
   provider.chat = createChatModel;
   provider.completion = createCompletionModel;
