@@ -4,10 +4,10 @@ The **[DIALX provider] is based on [Azure provider](https://ai-sdk.dev/providers
 
 ## Setup
 
-The DIALX provider is available in the `@kuka/dialx-sdk` module. You can install it with
+The DIALX provider is available in the `@nikolakukavica/dialx-sdk` module. You can install it with
 
 ```bash
-npm i @kuka/dialx-sdk
+npm i @nikolakukavica/dialx-sdk
 ```
 
 ## Skill for Coding Agents
@@ -20,16 +20,16 @@ npx skills add vercel/ai
 
 ## Provider Instance
 
-You can import the default provider instance `dialx` from `@kuka/dialx-sdk`:
+You can import the default provider instance `dialx` from `@nikolakukavica/dialx-sdk`:
 
 ```ts
-import { dialx } from '@kuka/dialx-sdk';
+import { dialx } from '@nikolakukavica/dialx-sdk';
 ```
 
 ## Example
 
 ```ts
-import { dialx } from '@kuka/dialx-sdk';
+import { dialx } from '@nikolakukavica/dialx-sdk';
 import { generateText } from 'ai';
 
 const { text } = await generateText({

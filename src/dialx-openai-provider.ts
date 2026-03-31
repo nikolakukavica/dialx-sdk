@@ -8,12 +8,12 @@ import {
   OpenAITranscriptionModel,
 } from '@ai-sdk/openai/internal';
 import {
-  ProviderV3,
-  LanguageModelV3,
-  EmbeddingModelV3,
-  ImageModelV3,
-  TranscriptionModelV3,
-  SpeechModelV3,
+  ProviderV4,
+  LanguageModelV4,
+  EmbeddingModelV4,
+  ImageModelV4,
+  TranscriptionModelV4,
+  SpeechModelV4,
 } from '@ai-sdk/provider';
 import {
   FetchFunction,
@@ -24,68 +24,68 @@ import {
 import { dialxOpenaiTools } from './dialx-openai-tools';
 import { VERSION } from './version';
 
-export interface DialxOpenAIProvider extends ProviderV3 {
-  (deploymentId: string): LanguageModelV3;
+export interface DialxOpenAIProvider extends ProviderV4 {
+  (deploymentId: string): LanguageModelV4 | EmbeddingModelV4 | ImageModelV4 | TranscriptionModelV4 | SpeechModelV4;
 
   /**
    * Creates an Azure OpenAI responses API model for text generation.
    */
-  languageModel(deploymentId: string): LanguageModelV3;
+  languageModel(deploymentId: string): LanguageModelV4;
 
   /**
    * Creates an Azure OpenAI chat model for text generation.
    */
-  chat(deploymentId: string): LanguageModelV3;
+  chat(deploymentId: string): LanguageModelV4;
 
   /**
    * Creates an Azure OpenAI responses API model for text generation.
    */
-  responses(deploymentId: string): LanguageModelV3;
+  responses(deploymentId: string): LanguageModelV4;
 
   /**
    * Creates an Azure OpenAI completion model for text generation.
    */
-  completion(deploymentId: string): LanguageModelV3;
+  completion(deploymentId: string): LanguageModelV4;
 
   /**
    * Creates an Azure OpenAI model for text embeddings.
    */
-  embedding(deploymentId: string): EmbeddingModelV3;
+  embedding(deploymentId: string): EmbeddingModelV4;
 
   /**
    * Creates an Azure OpenAI model for text embeddings.
    */
-  embeddingModel(deploymentId: string): EmbeddingModelV3;
+  embeddingModel(deploymentId: string): EmbeddingModelV4;
 
   /**
    * @deprecated Use `embedding` instead.
    */
-  textEmbedding(deploymentId: string): EmbeddingModelV3;
+  textEmbedding(deploymentId: string): EmbeddingModelV4;
 
   /**
    * @deprecated Use `embeddingModel` instead.
    */
-  textEmbeddingModel(deploymentId: string): EmbeddingModelV3;
+  textEmbeddingModel(deploymentId: string): EmbeddingModelV4;
 
   /**
    * Creates an Azure OpenAI DALL-E model for image generation.
    */
-  image(deploymentId: string): ImageModelV3;
+  image(deploymentId: string): ImageModelV4;
 
   /**
    * Creates an Azure OpenAI DALL-E model for image generation.
    */
-  imageModel(deploymentId: string): ImageModelV3;
+  imageModel(deploymentId: string): ImageModelV4;
 
   /**
    * Creates an Azure OpenAI model for audio transcription.
    */
-  transcription(deploymentId: string): TranscriptionModelV3;
+  transcription(deploymentId: string): TranscriptionModelV4;
 
   /**
    * Creates an Azure OpenAI model for speech generation.
    */
-  speech(deploymentId: string): SpeechModelV3;
+  speech(deploymentId: string): SpeechModelV4;
 
   /**
    * DialxOpenAI-specific tools.
