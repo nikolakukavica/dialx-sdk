@@ -1,5 +1,5 @@
 {
-  "name": "@kuka/dialx-sdk",
+  "name": "@nikolakukavica/dialx-sdk",
   "version": "0.0.1",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -55,5 +55,7 @@
   },
   "keywords": [
     "ai"
-  ]
+  ],
+  "description": "The **[DIALX provider] is based on [Azure provider](https://ai-sdk.dev/providers/ai-sdk-providers/azure)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the DIALX OpenAI API.",
+  "author": "Nikola Kukavica"
 }
